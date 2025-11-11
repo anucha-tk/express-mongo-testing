@@ -14,10 +14,16 @@ services:
   mongo:
     image: mongo:8
     restart: always
+    env_file:
+      - .env
     environment:
+      DB_NAME: ${DB_NAME}
+      APP_DB_USER: ${APP_DB_USER}
+      APP_DB_PWD: ${APP_DB_PWD}
       MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
     volumes:
+      - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
       - db_data:/data/db
 
   mongo-express:
@@ -28,8 +34,10 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGODB_USER}
       ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGODB_PASSWORD}
-      ME_CONFIG_MONGODB_URL: mongodb://${MONGODB_USER}:${MONGODB_PASSWORD}@mongo:27017/
-      ME_CONFIG_BASICAUTH: "false"
+      ME_CONFIG_MONGODB_URL: mongodb://${MONGODB_USER}:${MONGODB_PASSWORD}@${MONGODB_URI}/
+      ME_CONFIG_BASICAUTH: false
+    depends_on:
+      - mongo
 
 volumes:
   db_data:
