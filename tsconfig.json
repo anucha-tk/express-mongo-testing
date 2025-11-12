@@ -3,10 +3,23 @@
 	"compilerOptions": {
 		"baseUrl": "./",
 		"paths": {
-			"@src/*": ["src/*"],
-			"@tests/*": ["tests/*"]
-		}
+			"@src/*": [
+				"src/*"
+			],
+			"@tests/*": [
+				"tests/*"
+			]
+		},
+		"module": "node16",
+		"moduleResolution": "node16",
+		"esModuleInterop": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
 	},
-	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }

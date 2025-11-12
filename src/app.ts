@@ -1,5 +1,6 @@
 import express from "express";
 import helmet from "helmet";
+import { connectToDatabase } from "./common/database/db.ts";
 
 const app = express();
 const port = parseInt(process.env.PORT || "3000", 10);
@@ -14,6 +15,7 @@ const startServer = async () => {
 		const server = app.listen(port, "0.0.0.0", () => {
 			console.log(`[server] Listening on port ${port}`);
 		});
+		connectToDatabase();
 
 		// optional: handle runtime errors
 		server.on("error", (err) => {
