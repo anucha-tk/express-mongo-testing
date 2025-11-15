@@ -1,5 +1,6 @@
 services:
   backend:
+    container_name: backend
     image: express-mongo-vitest
     build:
       context: .
@@ -12,6 +13,7 @@ services:
       - mongo
 
   mongo:
+    container_name: mongo
     image: mongo:8
     restart: always
     env_file:
@@ -27,6 +29,7 @@ services:
       - db_data:/data/db
 
   mongo-express:
+    container_name: mongo-express
     image: mongo-express
     restart: always
     ports:

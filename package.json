@@ -12,6 +12,7 @@
 		"@tsconfig/node22": "^22.0.2",
 		"@types/bun": "latest",
 		"@types/express": "^5.0.5",
+		"@types/morgan": "^1.9.10",
 		"ts-node": "^10.9.2",
 		"tsconfig-paths": "^4.2.0"
 	},
@@ -23,6 +24,7 @@
 		"express": "^5.1.0",
 		"helmet": "^8.1.0",
 		"mongoose": "^8.19.3",
+		"morgan": "^1.10.1",
 		"nodemon": "^3.1.10"
 	}
 }
