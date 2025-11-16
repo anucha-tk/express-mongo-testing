@@ -6,7 +6,8 @@
 		"start": "node dist/server.js",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/server.ts",
 		"lint": "bunx biome check --write",
-		"test": "jest --watch"
+		"test": "jest --watch",
+		"coverage": "jest --coverage"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.5",

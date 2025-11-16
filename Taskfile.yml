@@ -13,3 +13,21 @@ tasks:
   logs:
     cmds:
       - docker compose -f docker-compose.test.yml logs
+  coverage:
+    cmds:
+      - npm run coverage
+  coverage:open:
+    deps:
+    - coverage
+    cmds:
+      # macOS
+      # - cmd: open ./coverage/lcov-report/index.html
+      #   platforms: [darwin]
+      
+      # Windows (CMD or PowerShell)
+      # - cmd: start ./coverage/lcov-report/index.html
+      #   platforms: [windows]
+
+      # Linux/WSL (Requires xdg-open package, which is standard)
+      - cmd: cmd.exe /c start $(wslpath -w ./coverage/lcov-report/index.html)
+        platforms: [linux]

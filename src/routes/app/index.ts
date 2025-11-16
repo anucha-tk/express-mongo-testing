@@ -1,8 +1,10 @@
 import express from "express";
-import hello from "../../controllers/app/app.controller";
+import { AppController } from "src/controllers/app/app.controller";
 
 const appRouter = express.Router();
 
-appRouter.get("/hello", hello);
+const appController = new AppController();
+
+appRouter.get("/hello", appController.hello);
 
 export default appRouter;
