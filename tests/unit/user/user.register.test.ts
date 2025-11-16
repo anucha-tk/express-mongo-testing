@@ -23,7 +23,14 @@ describe("UserService.register", () => {
 	test("should create new user", async () => {
 		const payload = { email: "example@gmail.com", password: "123456" };
 		userRepo.findByEmail.mockResolvedValue(null);
-		userRepo.create.mockResolvedValue({ ...payload } as IUserDocument);
+		// userRepo.create.mockResolvedValue({ ...payload } as IUserDocument);
+		userRepo.create.mockResolvedValue({
+			...payload,
+			toObject: () => ({
+				email: payload.email,
+				password: payload.password,
+			}),
+		} as unknown as IUserDocument);
 
 		const result = await userService.register(payload);
 

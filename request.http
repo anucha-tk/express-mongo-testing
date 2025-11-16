@@ -7,7 +7,7 @@
 
 GET {{base}}/hello HTTP/1.1
 Accept: application/json
-Content-Type: application/jsoj
+Content-Type: application/json
 
 
 ### 
@@ -17,6 +17,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "anucha",
+  "email": "anucha13",
   "password": "123456"
 }

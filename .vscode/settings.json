@@ -22,7 +22,8 @@
 	"cSpell.words": [
 		"bunx",
 		"DBURI",
-		"INITDB"
+		"INITDB",
+		"virtuals"
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.biome": "explicit"

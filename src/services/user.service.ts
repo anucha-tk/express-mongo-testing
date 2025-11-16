@@ -13,6 +13,7 @@ export class UserService {
 		if (existing) {
 			throw new BadRequestError("User already exist");
 		}
-		return this.userRepo.create(user);
+		const result = await this.userRepo.create(user);
+		return result.toObject();
 	}
 }
