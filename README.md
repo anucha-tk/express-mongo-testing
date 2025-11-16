@@ -1,4 +1,4 @@
-# express-mongo-vitest
+# express-mongo-testing
 
 To install dependencies:
 

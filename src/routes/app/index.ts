@@ -1,5 +1,5 @@
-import hello from "@src/controllers/app/app.controller.ts";
 import express from "express";
+import hello from "../../controllers/app/app.controller";
 
 const appRouter = express.Router();
 

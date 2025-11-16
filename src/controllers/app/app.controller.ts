@@ -1,7 +1,8 @@
-import type { Request, Response } from "express";
+import asyncHandler from "@middlewares/asyncHandler";
+import { SuccessMsgResponse } from "@response/response";
 
-const hello = async (_req: Request, res: Response) => {
-	res.status(200).json({ message: "Hello" });
-};
+const hello = asyncHandler(async (_req, res) => {
+	new SuccessMsgResponse("hello").send(res);
+});
 
 export default hello;

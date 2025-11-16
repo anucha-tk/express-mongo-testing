@@ -1,7 +1,7 @@
 services:
   backend:
     container_name: backend
-    image: express-mongo-vitest
+    image: express-mongo-testing
     build:
       context: .
       dockerfile: Dockerfile

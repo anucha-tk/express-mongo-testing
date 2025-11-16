@@ -19,7 +19,11 @@
 	"prettier.enable": false,
 	"eslint.format.enable": false,
 	"biome.enabled": true,
-	"cSpell.words": ["INITDB"],
+	"cSpell.words": [
+		"bunx",
+		"DBURI",
+		"INITDB"
+	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.biome": "explicit"
 	}

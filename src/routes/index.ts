@@ -1,5 +1,5 @@
 import express from "express";
-import appRouter from "./app/index.ts";
+import appRouter from "./app";
 
 const apiRouterV1 = express.Router();
 
