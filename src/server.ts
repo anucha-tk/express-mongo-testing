@@ -16,7 +16,6 @@ const startServer = () => {
 				Logger.info("------------------------------------------------------");
 			})
 			.on("error", (e) => Logger.error(e));
-		// optional: handle runtime errors
 	} catch (error) {
 		console.error("[server] Failed to start server:", error);
 		process.exit(1);
